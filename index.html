@@ -18,20 +18,42 @@
       <div class="left-side flex-item">
         <form class="form-container" id="form">
           <div class="form-group">
-            <label for="property value">Стоимость недвижимости</label>
-            <input type="number" name="value" placeholder="3000000" id="property_vlaue" class="number">
+            <label for="property value">Стоимость недвижимости в &#8381;<output id="pro_cost" class="output">1500000</output>
+            </label>
+            <input 
+              type="range" 
+              name="value" 
+              value="1500000" min="100000" 
+              max="60000000" 
+              step="1" 
+              id="property_vlaue" 
+              class="number"
+              oninput="pro_cost.value = property_vlaue.value"
+            >
           </div>
           <div class="form-group">
-            <label for="initial fee">Первоначальный взнос</label>
-            <input type="number" name="value" id="initial_fee" placeholder="1000000">
+            <label for="initial fee">Первоначальный взнос в &#8381; <output id="initial" class="output">150000</output> </label>
+            <input 
+              type="range" 
+              name="value" 
+              value="150000" 
+              min="0" 
+              max="60000000"
+              step="1"
+              id="initial_fee"
+              oninput=" initial.value = initial_fee.value"
+            >
           </div>
           <div class="form-group">
             <label for="Credit term">Срок кредита (количество лет)</label>
-            <input type="number" name="value" id="credit-term" placeholder="10">
+            <input type="number" name="value" id="credit-term">
           </div>
           <div class="form-group">
-            <label for="Interest rate">Процентная ставка<output id="interest_rateOutput" class="output" style="color: black;">0.1</output>%</label>
-            <input type="range" name="value" id="interest_rate" value="0" min="0.1" max="20" step="0.1" oninput="interest_rateOutput.value = interest_rate.value">
+            <label for="Interest rate">Процентная ставка в %
+              <output id="interest_rateOutput" class="output" 
+              style="color: black;">0.1</output></label>
+            <input type="range" name="value" id="interest_rate" value="0" min="0.1" max="20" step="0.1" 
+            oninput="interest_rateOutput.value = interest_rate.value">
           </div>
           <div class="form-group">
             <input class="button-primary" type="submit" value="Рассчитать" id="submit-form"></input>
